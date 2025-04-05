@@ -1,10 +1,30 @@
+import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import Image from "next/image";
+import Highscores from "./highscores";
 import styles from "./page.module.css";
+import GameSurface from "./gamesurface";
 
-export default function Home() {
+type BackendEndpointDetails = {
+  baseAddress: string;
+}
+
+async function fetchBackendEndpointDetails(): Promise<BackendEndpointDetails> {
+  const baseAddress = process.env["services__backend__http__0"] as string;
+
+  return {
+    baseAddress: baseAddress
+  }
+}
+
+export default async function Home() {
+  const backendEndpointDetails = await fetchBackendEndpointDetails();
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <h1>{backendEndpointDetails.baseAddress}!</h1>
+        <Highscores />
+        <GameSurface />
         <Image
           className={styles.logo}
           src="/next.svg"

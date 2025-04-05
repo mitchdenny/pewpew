@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Sdk Name="Aspire.AppHost.Sdk" Version="9.3.0-preview.1.25203.11" />
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.3.0-preview.1.25204.10" />
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -11,8 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.3.0-preview.1.25203.11" />
-    <PackageReference Include="Aspire.Hosting.NodeJs" Version="9.3.0-preview.1.25203.11" />
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.3.0-preview.1.25204.10" />
+    <PackageReference Include="Aspire.Hosting.Docker" Version="9.3.0-preview.1.25204.10" />
+    <PackageReference Include="Aspire.Hosting.NodeJs" Version="9.3.0-preview.1.25204.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Pewpew.Backend/Pewpew.Backend.csproj" />
   </ItemGroup>
 
 </Project>
